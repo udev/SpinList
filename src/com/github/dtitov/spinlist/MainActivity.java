@@ -33,9 +33,12 @@ public class MainActivity extends ListActivity {
 		users.add("adele");
 		users.add("coldplay");
 		users.add("gotye");
+		users.add("huskyrescueofficial");
 		users.add("kasabian");
 		users.add("lanadelrey");
+		users.add("muse");
 		users.add("officialplacebo");
+		users.add("theraveonettes");
 
 		/**
 		 * Create and initialize our own adapter.

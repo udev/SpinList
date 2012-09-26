@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- package com.github.dtitov.spinlist;
+package com.github.dtitov.spinlist;
 
 import java.util.ArrayList;
 
@@ -58,13 +58,11 @@ public class LazyAdapter extends BaseAdapter {
 		View item = convertView;
 		if (item == null) {
 			item = layoutInflater.inflate(R.layout.item_user, null);
-			TextView textViewMate = (TextView) item
-					.findViewById(R.id.textViewUser);
-			ProgressBar spinner = (ProgressBar) item
-					.findViewById(R.id.progressBar);
-			new FetchDataTask(activity, textViewMate, spinner,
-					folks.get(position)).execute(new Void[] {});
 		}
+		TextView textViewMate = (TextView) item.findViewById(R.id.textViewUser);
+		ProgressBar spinner = (ProgressBar) item.findViewById(R.id.progressBar);
+		new FetchDataTask(activity, textViewMate, spinner, folks.get(position))
+				.execute(new Void[] {});
 		return item;
 	}
 
