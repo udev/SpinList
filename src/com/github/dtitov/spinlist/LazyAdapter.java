@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,19 +36,32 @@ import android.widget.TextView;
 public class LazyAdapter extends BaseAdapter {
 	private Activity activity;
 	private LayoutInflater layoutInflater;
-	private ArrayList<String> folks;
+	private ArrayList<String> names;
+	private FbUser[] folks; // array for caching users
 
 	/**
 	 * 
 	 * Loading of all necessary objects: activity and user list. Getting the
 	 * inflater.
 	 */
-	public LazyAdapter(Activity activity, ArrayList<String> folks) {
+	public LazyAdapter(Activity activity, ArrayList<String> names) {
 		super();
 		this.activity = activity;
-		this.folks = folks;
+		this.names = names;
+		this.folks = new FbUser[this.names.size()];
 		layoutInflater = (LayoutInflater) activity
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	}
+
+	/**
+	 * 
+	 * Using ViewHolder patter we save time by avoiding calling findViewById
+	 * each time we need a view.
+	 * 
+	 */
+	private static class ViewHolder {
+		public TextView textView;
+		public ProgressBar spinner;
 	}
 
 	/**
@@ -55,29 +69,71 @@ public class LazyAdapter extends BaseAdapter {
 	 * null) and passes the View to AyncTask processing.
 	 */
 	public View getView(int position, View convertView, ViewGroup parent) {
+		FbUser cachedUser = folks[position]; // trying to get a user from cache
+
 		View item = convertView;
+		ViewHolder viewHolder;
+
+		/**
+		 * If item has not been created yet, we inflate it and pass its personal
+		 * ViewHolder as a tag parameter. Otherwise we just get an existing
+		 * ViewHolder.
+		 */
 		if (item == null) {
 			item = layoutInflater.inflate(R.layout.item_user, null);
+			viewHolder = new ViewHolder();
+			viewHolder.textView = (TextView) item
+					.findViewById(R.id.textViewUser);
+			viewHolder.spinner = (ProgressBar) item
+					.findViewById(R.id.progressBar);
+			item.setTag(viewHolder);
+		} else {
+			viewHolder = (ViewHolder) item.getTag();
 		}
-		TextView textViewMate = (TextView) item.findViewById(R.id.textViewUser);
-		ProgressBar spinner = (ProgressBar) item.findViewById(R.id.progressBar);
-		new FetchDataTask(activity, textViewMate, spinner, folks.get(position))
-				.execute(new Void[] {});
+
+		/**
+		 * If the current user is not cached yet, we execute async task for
+		 * retreiving the information. Otherwise we just load data from the
+		 * cached object.
+		 */
+		if (cachedUser == null) {
+			viewHolder.textView.setText("");
+			viewHolder.textView.setCompoundDrawablesWithIntrinsicBounds(
+					null,
+					null,
+					activity.getResources().getDrawable(
+							R.drawable.facebook_icon), null);
+			viewHolder.spinner.setVisibility(View.VISIBLE);
+			new FetchDataTask(activity, this, position, viewHolder.textView,
+					viewHolder.spinner, names.get(position))
+					.execute(new Void[] {});
+		} else {
+			viewHolder.textView.setText(cachedUser.getName());
+			viewHolder.spinner.setVisibility(View.GONE);
+			viewHolder.textView.setCompoundDrawablesWithIntrinsicBounds(
+					new BitmapDrawable(activity.getResources(), cachedUser
+							.getBitmap()), null, activity.getResources()
+							.getDrawable(R.drawable.facebook_icon), null);
+		}
 		return item;
 	}
 
 	@Override
 	public int getCount() {
-		return folks.size();
+		return names.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return folks.get(position);
+		return names.get(position);
 	}
 
 	@Override
 	public long getItemId(int position) {
 		return position;
+	}
+
+	public FbUser[] getFolks() {
+		return folks;
 	}
 }

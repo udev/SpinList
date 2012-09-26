@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- package com.github.dtitov.spinlist;
+package com.github.dtitov.spinlist;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -39,17 +39,21 @@ import android.widget.TextView;
  */
 public class FetchDataTask extends AsyncTask<Void, Void, FbUser> {
 	private Activity activity;
-	private TextView textView;
+	private LazyAdapter adapter;
+	private int position;
+	private TextView textViewMate;
 	private ProgressBar spinner;
 	private String id;
 
 	/**
 	 * Get necessary UI objects.
 	 */
-	public FetchDataTask(Activity activity, TextView textView,
-			ProgressBar spinner, String id) {
+	public FetchDataTask(Activity activity, LazyAdapter adapter, int position,
+			TextView textView, ProgressBar spinner, String id) {
 		this.activity = activity;
-		this.textView = textView;
+		this.adapter = adapter;
+		this.position = position;
+		this.textViewMate = textView;
 		this.spinner = spinner;
 		this.id = id;
 	}
@@ -92,10 +96,16 @@ public class FetchDataTask extends AsyncTask<Void, Void, FbUser> {
 	@Override
 	protected void onPostExecute(FbUser result) {
 		super.onPostExecute(result);
-		textView.setText(result.getName());
+		adapter.getFolks()[position] = result; // caching current user by it's
+												// position
+		textViewMate.setText(result.getName());
 		spinner.setVisibility(View.GONE);
-		textView.setCompoundDrawablesWithIntrinsicBounds(new BitmapDrawable(
-				activity.getResources(), result.getBitmap()), null, activity
-				.getResources().getDrawable(R.drawable.facebook_icon), null);
+		textViewMate
+				.setCompoundDrawablesWithIntrinsicBounds(
+						new BitmapDrawable(activity.getResources(), result
+								.getBitmap()),
+						null,
+						activity.getResources().getDrawable(
+								R.drawable.facebook_icon), null);
 	}
 }
