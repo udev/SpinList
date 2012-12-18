@@ -58,8 +58,8 @@ public class FbUser {
 
 				JSONObject object = (JSONObject) new JSONTokener(responseString)
 						.nextValue();
+                this.picture = object.getJSONObject("picture").getJSONObject("data").getString("url");
 				this.name = object.getString("name");
-				this.picture = object.getString("picture");
 			} else {
 				httpResponse.getEntity().getContent().close();
 			}
