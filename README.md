@@ -3,7 +3,7 @@ SpinList
 
 Sample Android app for demonstrating lazy ListView with ViewHolder and data caching.
 
-![Screenshot](https://github.com/dtitov/SpinList/blob/master/screenshot.png?raw=true)
+![Screenshot](http://habrastorage.org/storage2/254/6fc/39d/2546fc39d0f76f7a04e939df66d821d0.png)
 
 Features
 -------
