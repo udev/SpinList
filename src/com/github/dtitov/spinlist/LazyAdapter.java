@@ -138,7 +138,7 @@ public class LazyAdapter extends BaseAdapter {
     public void cacheUser(FbUser user) {
         folks[folksNumber] = user;
         folksNumber++;
-        notifyDataSetChanged();
+        notifyDataSetChanged(); //reload ListView
     }
 
     /**

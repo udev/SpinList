@@ -82,11 +82,10 @@ public class FetchDataTask extends AsyncTask<Void, Void, FbUser> {
     protected void onPostExecute(FbUser result) {
         super.onPostExecute(result);
         adapter.cacheUser(result);
-        adapter.notifyDataSetChanged(); //reload ListView
 
         //recursive call of an asynchronous task
         if (position < adapter.getCount() - 1) {
-            new FetchDataTask(adapter, ++position).execute(new Void[]{});
+            new FetchDataTask(adapter, ++position).execute();
         }
     }
 }
