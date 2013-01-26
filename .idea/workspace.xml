@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/FbUser.java" afterPath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/FbUser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/FetchDataTask.java" afterPath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/FetchDataTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/LazyAdapter.java" afterPath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/LazyAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/github/dtitov/spinlist/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SpinList.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" time="1359210507671" ignored="false" />
     <file path="/fragment.java" changelist="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" time="1359210672197" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" time="1359221878561" ignored="false" />
-    <file path="/LazyAdapter.java" changelist="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" time="1359218000115" ignored="false" />
+    <file path="/LazyAdapter.java" changelist="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" time="1359233340266" ignored="false" />
+    <file path="/FetchDataTask.java" changelist="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" time="1359233454245" ignored="false" />
+    <file path="/MainActivity.java" changelist="96da9d2c-e70f-40b0-b595-aee9fa0d27a6" time="1359224582476" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,10 +75,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="58" selection-start="3327" selection-end="3327" vertical-scroll-proportion="0.0">
+            <state line="56" column="38" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.75421685">
               <folding />
             </state>
           </provider>
@@ -84,35 +87,8 @@
       <file leaf-file-name="FetchDataTask.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/FetchDataTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="30" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#3777#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FbUser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/FbUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="26" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#2774#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LazyAdapter.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/LazyAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="37" selection-start="1335" selection-end="1335" vertical-scroll-proportion="-0.08192771">
-              <folding>
-                <element signature="e#0#4569#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="38" column="35" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,11 +111,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/github/dtitov/spinlist/MainActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/github/dtitov/spinlist/FetchDataTask.java" />
         <option value="$PROJECT_DIR$/src/com/github/dtitov/spinlist/FbUser.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dtitov/spinlist/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/com/github/dtitov/spinlist/LazyAdapter.java" />
+        <option value="$PROJECT_DIR$/src/com/github/dtitov/spinlist/FetchDataTask.java" />
       </list>
     </option>
   </component>
@@ -384,7 +360,7 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5008104" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -470,40 +446,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/MainActivity.java">
+    <entry file="jar://C:/Program Files/Android/android-sdk/platforms/android-7/android.jar!/android/widget/Adapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="58" selection-start="3327" selection-end="3327" vertical-scroll-proportion="0.0">
+        <state line="16" column="21" selection-start="458" selection-end="458" vertical-scroll-proportion="0.3325301">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/FetchDataTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="30" selection-start="1369" selection-end="1369" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#3777#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/FbUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="26" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#2774#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="48" column="52" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.34457833">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/LazyAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="37" selection-start="1335" selection-end="1335" vertical-scroll-proportion="-0.08192771">
+        <state line="135" column="59" selection-start="4423" selection-end="4423" vertical-scroll-proportion="5.5301204">
           <folding>
-            <element signature="e#0#4569#0" expanded="true" />
+            <element signature="e#0#4811#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/FetchDataTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="35" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/github/dtitov/spinlist/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="38" selection-start="1593" selection-end="1593" vertical-scroll-proportion="0.75421685">
+          <folding />
         </state>
       </provider>
     </entry>

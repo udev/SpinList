@@ -15,14 +15,9 @@
  */
 package com.github.dtitov.spinlist;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -36,24 +31,17 @@ import java.net.MalformedURLException;
  * result is passed to the UI thread.
  */
 public class FetchDataTask extends AsyncTask<Void, Void, FbUser> {
-    private Activity activity;
     private LazyAdapter adapter;
     private int position;
-    private TextView textViewMate;
-    private ProgressBar spinner;
     private String id;
 
     /**
-     * Get necessary UI objects.
+     * Get LazyAdapter to work with.
      */
-    public FetchDataTask(Activity activity, LazyAdapter adapter, int position,
-                         TextView textView, ProgressBar spinner, String id) {
-        this.activity = activity;
+    public FetchDataTask(LazyAdapter adapter, int position) {
         this.adapter = adapter;
         this.position = position;
-        this.textViewMate = textView;
-        this.spinner = spinner;
-        this.id = id;
+        this.id = (String) adapter.getItem(position);
     }
 
     /**
@@ -88,22 +76,17 @@ public class FetchDataTask extends AsyncTask<Void, Void, FbUser> {
     }
 
     /**
-     * Setting the UI: hide progress bar, display both images (userpic on the
-     * left and tiny icon on the right) and user's full name
+     * Caching user after it's retrieving.
      */
     @Override
     protected void onPostExecute(FbUser result) {
         super.onPostExecute(result);
-        adapter.getFolks()[position] = result; // caching current user by it's
-        // position
-        textViewMate.setText(result.getName());
-        spinner.setVisibility(View.GONE);
-        textViewMate
-                .setCompoundDrawablesWithIntrinsicBounds(
-                        new BitmapDrawable(activity.getResources(), result
-                                .getBitmap()),
-                        null,
-                        activity.getResources().getDrawable(
-                                R.drawable.facebook_icon), null);
+        adapter.cacheUser(result);
+        adapter.notifyDataSetChanged(); //reload ListView
+
+        //recursive call of an asynchronous task
+        if (position < adapter.getCount() - 1) {
+            new FetchDataTask(adapter, ++position).execute(new Void[]{});
+        }
     }
 }
